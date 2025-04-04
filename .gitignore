@@ -1,0 +1,14 @@
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore node_modules for your Next.js project
+node_modules/
+
+# Optional: Ignore environment files
+.env
