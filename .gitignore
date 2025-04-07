@@ -3,6 +3,9 @@
 *.user
 *.suo
 
+# Umbraco log files
+**/umbraco/Logs/*
+
 # Ignore build output
 bin/
 obj/
