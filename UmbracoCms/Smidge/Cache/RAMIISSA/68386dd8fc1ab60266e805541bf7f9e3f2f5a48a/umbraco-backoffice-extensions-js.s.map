@@ -1,0 +1,7 @@
+{
+"version":3,
+"file":"umbraco-backoffice-extensions-js.js",
+"mappings":"CAAC,QAAS,CAAA,CAAG,CACX,Y,CAQAA,SAASA,+BAA+B,CAACC,MAAD,CAAS,CAC/C,IAAIC,GAAK,IAAI,CAGbA,EAAEC,MAAO,CAAEF,MAAME,MAAM,CAGvBD,EAAEE,SAAU,CAAEC,QAAS,CAAA,CAAG,CACnBH,EAAEC,MAAMG,M,GACXJ,EAAEC,MAAMG,MAAO,CAAE,CAAA,EAAE,CAErBJ,EAAEC,MAAMG,MAAMC,KAAK,CAAC,CAClB,IAAI,CAAE,EAAE,CACR,GAAG,CAAE,SAFa,CAAD,CAJK,CAQzB,CAGDL,EAAEM,YAAa,CAAEC,QAAS,CAACC,KAAD,CAAQ,CAChCR,EAAEC,MAAMG,MAAMK,OAAO,CAACD,KAAK,CAAE,CAAR,CADW,CAlBa,CANjDE,OACEC,OAAO,CAAC,SAAD,CACPC,WAAW,CAAC,iCAAiC,CAAEd,+BAApC,CAAoE,CAEjFA,+BAA+Be,QAAS,CAAE,CAAC,QAAD,CAP/B,EA+BX,CAAA",
+"sources":["/App_Plugins/AvailableColorsEditor/editor.controller.js"],
+"names":["AvailableColorsEditorController","$scope","vm","model","addColor","vm.addColor","value","push","removeColor","vm.removeColor","index","splice","angular","module","controller","$inject"]
+}

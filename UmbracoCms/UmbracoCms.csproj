@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="App_Plugins\AvailableColorsEditor\editor.controller" />
+    <Content Include="App_Plugins\AvailableColorsEditor\editor.css" />
+    <Content Include="App_Plugins\AvailableColorsEditor\editor.view" />
+    <Content Include="App_Plugins\AvailableColorsEditor\editor.view.html" />
+    <Content Include="App_Plugins\AvailableColorsEditor\package.manifest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+    <PackageReference Include="Umbraco.Cms" Version="13.7.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App_Plugins\AvailableColorsEditor\editor.controller.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GeneralData\GeneralData.csproj" />
+  </ItemGroup>
+
+</Project>

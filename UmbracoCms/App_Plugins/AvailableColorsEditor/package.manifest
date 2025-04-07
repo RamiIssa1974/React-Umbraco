@@ -1,0 +1,18 @@
+{
+  "propertyEditors": [
+    {
+      "alias": "custom.availableColors",
+      "name": "Available Colors Picker",
+      "editor": {
+        "view": "~/App_Plugins/AvailableColorsEditor/editor.view.html",
+        "valueType": "JSON"
+      }
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/AvailableColorsEditor/editor.controller.js"
+  ],
+  "css": [
+    "~/App_Plugins/AvailableColorsEditor/editor.css"
+  ]
+}

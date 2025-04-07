@@ -1,0 +1,18 @@
+﻿<div class="available-colors-editor" ng-controller="AvailableColorsEditorController as vm">
+  <h4>Available Colors</h4>
+
+  <div ng-repeat="color in vm.model.value">
+    <label>
+      Color Name:
+      <input type="text" ng-model="color.name" />
+    </label>
+    <label>
+      Color Code:
+      <input type="color" ng-model="color.hex" />
+    </label>
+    <button type="button" ng-click="vm.removeColor($index)">🗑 Remove</button>
+    <hr />
+  </div>
+
+  <button type="button" ng-click="vm.addColor()">➕ Add Color</button>
+</div>

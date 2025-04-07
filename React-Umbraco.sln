@@ -1,9 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralData", "GeneralData\GeneralData.csproj", "{84EC57A5-1CAF-40AC-A435-F49D6DB8C61A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "react-web-store", "react-web-store\", "{F70EFDB8-BB15-EE88-5710-D13FFE58B76E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50159"
+		Debug.AspNetCompiler.PhysicalPath = "react-web-store\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50159\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50159"
+		Release.AspNetCompiler.PhysicalPath = "react-web-store\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50159\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50159"
+		SlnRelativePath = "react-web-store\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoCms", "UmbracoCms\UmbracoCms.csproj", "{75EC3AE1-2A6A-437F-845D-E6057C6186D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextStoreApi", "UmbracoApi\NextStoreApi.csproj", "{C9A94BF2-576C-4B60-A5B6-D324A86E906C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +40,18 @@ Global
 		{84EC57A5-1CAF-40AC-A435-F49D6DB8C61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84EC57A5-1CAF-40AC-A435-F49D6DB8C61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84EC57A5-1CAF-40AC-A435-F49D6DB8C61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70EFDB8-BB15-EE88-5710-D13FFE58B76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70EFDB8-BB15-EE88-5710-D13FFE58B76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70EFDB8-BB15-EE88-5710-D13FFE58B76E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70EFDB8-BB15-EE88-5710-D13FFE58B76E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{75EC3AE1-2A6A-437F-845D-E6057C6186D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75EC3AE1-2A6A-437F-845D-E6057C6186D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75EC3AE1-2A6A-437F-845D-E6057C6186D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75EC3AE1-2A6A-437F-845D-E6057C6186D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A94BF2-576C-4B60-A5B6-D324A86E906C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A94BF2-576C-4B60-A5B6-D324A86E906C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A94BF2-576C-4B60-A5B6-D324A86E906C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A94BF2-576C-4B60-A5B6-D324A86E906C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
