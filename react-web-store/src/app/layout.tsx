@@ -2,7 +2,9 @@
 import Link from "next/link";
 import "./globals.css"; // keep this for global styles
 import "../styles/layout.css";
- 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export const metadata = {
     title: "React Web Store",
     description: "A simple product store with Umbraco backend",

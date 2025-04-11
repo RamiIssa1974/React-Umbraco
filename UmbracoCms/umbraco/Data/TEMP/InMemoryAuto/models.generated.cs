@@ -16,8 +16,8 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-[assembly:ModelsBuilderAssembly(IsInMemory = true, SourceHash = "6c5851d8c02c4cfdacfcb3623b9a90c063f38f2c")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(IsInMemory = true, SourceHash = "b459bc8e0195fc2b56f9a2a6066ea63394996a07")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
@@ -279,6 +279,171 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
 		[ImplementPropertyType("price")]
 		public virtual int Price => this.Value<int>(_publishedValueFallback, "price");
+	}
+
+	/// <summary>Sale</summary>
+	[PublishedModel("sale")]
+	public partial class Sale : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		public new const string ModelTypeAlias = "sale";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
+			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Sale, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
+#pragma warning restore 0109
+
+		private IPublishedValueFallback _publishedValueFallback;
+
+		// ctor
+		public Sale(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+			: base(content, publishedValueFallback)
+		{
+			_publishedValueFallback = publishedValueFallback;
+		}
+
+		// properties
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("image")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Image => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "image");
+
+		///<summary>
+		/// Legal Information
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("legalInformation")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString LegalInformation => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "legalInformation");
+
+		///<summary>
+		/// Normal Price
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[ImplementPropertyType("normalPrice")]
+		public virtual decimal NormalPrice => this.Value<decimal>(_publishedValueFallback, "normalPrice");
+
+		///<summary>
+		/// Sale Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[ImplementPropertyType("saleDate")]
+		public virtual global::System.DateTime SaleDate => this.Value<global::System.DateTime>(_publishedValueFallback, "saleDate");
+
+		///<summary>
+		/// Sale Price
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[ImplementPropertyType("salePrice")]
+		public virtual decimal SalePrice => this.Value<decimal>(_publishedValueFallback, "salePrice");
+
+		///<summary>
+		/// Specifications
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("specifications")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Specifications => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "specifications");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("title")]
+		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+	}
+
+	/// <summary>Sales List</summary>
+	[PublishedModel("salesList")]
+	public partial class SalesList : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		public new const string ModelTypeAlias = "salesList";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
+			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<SalesList, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
+#pragma warning restore 0109
+
+		private IPublishedValueFallback _publishedValueFallback;
+
+		// ctor
+		public SalesList(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+			: base(content, publishedValueFallback)
+		{
+			_publishedValueFallback = publishedValueFallback;
+		}
+
+		// properties
+
+		///<summary>
+		/// Sales
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("sales")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Sales => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "sales");
+	}
+
+	/// <summary>Specification Item</summary>
+	[PublishedModel("specificationItem")]
+	public partial class SpecificationItem : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		public new const string ModelTypeAlias = "specificationItem";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public new static IPublishedContentType GetModelContentType(IPublishedSnapshotAccessor publishedSnapshotAccessor)
+			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<SpecificationItem, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
+#pragma warning restore 0109
+
+		private IPublishedValueFallback _publishedValueFallback;
+
+		// ctor
+		public SpecificationItem(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+			: base(content, publishedValueFallback)
+		{
+			_publishedValueFallback = publishedValueFallback;
+		}
+
+		// properties
+
+		///<summary>
+		/// Specification  Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.7.2+fd5b8de")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("specificationName")]
+		public virtual string SpecificationName => this.Value<string>(_publishedValueFallback, "specificationName");
 	}
 
 	/// <summary>Folder</summary>

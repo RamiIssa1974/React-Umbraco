@@ -5,7 +5,7 @@ using NextStoreApi.Interfaces;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
-
+  
 namespace NextStoreApi.Services.Umbraco
 {
     public class UmbracoProductDataProvider : IProductDataProvider
@@ -13,11 +13,42 @@ namespace NextStoreApi.Services.Umbraco
         private readonly HttpClient _httpClient;
         private readonly ILogger<UmbracoProductDataProvider> _logger;
 
-        public UmbracoProductDataProvider(HttpClient httpClient, ILogger<UmbracoProductDataProvider> logger)
+
+        public UmbracoProductDataProvider(HttpClient httpClient,
+                                          ILogger<UmbracoProductDataProvider> logger)
         {
             _httpClient = httpClient;
             _logger = logger;
         }
+
+        public async Task<List<SaleModel>> GetActiveSalesAsync()
+        {
+            try
+            {
+                var url = "http://umbraco.creativehandsco.com/api/products/GetSales";
+
+                var response = await _httpClient.GetAsync(url);
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogError($"Failed to fetch active sales: {response.StatusCode}");
+                    return new List<SaleModel>();
+                }
+
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var sales = JsonSerializer.Deserialize<List<SaleModel>>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                return sales ?? new List<SaleModel>();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Exception while calling Umbraco for active sales");
+                return new List<SaleModel>();
+            }
+        }
+
 
         public async Task<List<ProductModel>> GetProductsAsync(GetProductRequest request)
         {

@@ -23,5 +23,11 @@ namespace UmbracoCms.Controllers.Api
             var products = _productService.GetAllProducts();
             return Ok(products);
         }
+        [HttpGet("GetSales")]
+        public async Task<ActionResult<List<SaleModel>>> GetSales()
+        {
+            var sales = await _productService.GetActiveSalesAsync();
+            return Ok(sales);
+        }
     }
 }

@@ -8,8 +8,10 @@ using UmbracoApi.Interfaces;
 using Umbraco.Cms.Core;
 using Newtonsoft.Json;
 using GeneralData.UmbracoModels.Dtos;
-
-
+using Microsoft.EntityFrameworkCore.Internal;
+using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Web.Common.PublishedModels;
+using Umbraco.Cms.Core.Models.Blocks;
 
 namespace UmbracoApi.Services.Umbraco
 {
@@ -17,11 +19,17 @@ namespace UmbracoApi.Services.Umbraco
     {
         private readonly IContentService _contentService;
         private readonly IMediaService _mediaService;
+        private readonly IUmbracoContextFactory _contextFactory;
 
-        public UmbracoProductService(IContentService contentService, IMediaService mediaService)
+        public UmbracoProductService(IContentService contentService, 
+                                     IMediaService mediaService,
+                                     IUmbracoContextFactory contextFactory
+                                     )
         {
             _contentService = contentService;
             _mediaService = mediaService;
+            _contextFactory = contextFactory;
+
 
         }
         public List<ProductModel> GetAllProducts()
@@ -144,6 +152,43 @@ namespace UmbracoApi.Services.Umbraco
             }
 
             return colors;
+        }
+
+        public async Task<List<SaleModel>> GetActiveSalesAsync()
+        {
+            using var contextRef = _contextFactory.EnsureUmbracoContext();
+            var umbracoContext = contextRef.UmbracoContext;
+
+            var salesRoot = umbracoContext.Content
+                .GetAtRoot()
+                .FirstOrDefault(x => x.ContentType.Alias == "salesList");
+
+            if (salesRoot == null)
+                return new List<SaleModel>();
+            
+            var salesBlockList = salesRoot.Value<BlockListModel>("sales");
+
+
+            var sales = salesBlockList
+                        .Select(b => b.Content) // get only the content, not settings
+                        .Where(x => x.ContentType.Alias == "sale")
+                        .Where(x => x.Value<DateTime>("saleDate") >= DateTime.Now)
+                        .Select(x => new SaleModel
+                        {
+                            Title = x.Value<string>("title"),
+                            ImageUrl = x.Value<IPublishedContent>("image")?.Url() ?? "",
+                            Specifications = x.Value<BlockListModel>("specifications")
+                                            ?.Select(b => b.Content.Value<string>("specificationName"))
+                                            .ToList() ?? new(),
+                            NormalPrice = x.Value<decimal>("normalPrice"),
+                            SalePrice = x.Value<decimal>("salePrice"),
+                            LegalInfo = x.Value<string>("legalInformation"),
+                            SaleDate = x.Value<DateTime>("saleDate")
+                        })
+                        .ToList();
+
+
+            return sales; // simulate async for now
         }
     }
 }

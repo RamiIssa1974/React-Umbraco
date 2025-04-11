@@ -26,5 +26,13 @@ namespace NextStoreApi.Controllers
             return Ok(products);
         }
 
+        [HttpGet("GetActiveSales")]
+        public async Task<IActionResult> GetActiveSales()
+        {
+            var sales = await _productProvider.GetActiveSalesAsync();
+            return Ok(sales);
+        }
+
+
     }
 }

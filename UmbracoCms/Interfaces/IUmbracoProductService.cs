@@ -3,8 +3,10 @@
 namespace UmbracoApi.Interfaces.Umbraco
 {
     public interface IUmbracoProductService
-    {         
-            List<ProductModel> GetAllProducts();
-        
+    {
+        List<ProductModel> GetAllProducts();
+        Task<List<SaleModel>> GetActiveSalesAsync();
+
+
     }
 }
